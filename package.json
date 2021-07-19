@@ -1,5 +1,5 @@
 {
-  "name": "ui-feedback-platform-backend",
+  "name": "community-feedback-platform-backend",
   "version": "1.0.0",
   "description": "The ui feedback platform backend",
   "main": "index.js",
