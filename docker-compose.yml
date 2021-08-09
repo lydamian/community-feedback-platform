@@ -1,5 +1,9 @@
 
 version: "3.8"
+networks:
+  community_feedback_network:
+  default:
+    name: community_feedback_network
 services:
   postgres:
     image: postgres
@@ -7,14 +11,17 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports: 
-      - '5433:5432'
+      - '5432:5432'
     volumes:
       - community-feedback-postgres:/var/lib/postgresql/data
+    networks:
+      - community_feedback_network
 
   community-feedback-backend:
     build:
       context: .
       dockerfile: ./Dockerfile
+    restart: always
     environment:
       DB_SCHEMA: postgres
       DB_USER: postgres
@@ -27,6 +34,8 @@ services:
       - /usr/src/app/node_modules/
     ports:
       - "5000:5000"
+    networks:
+      - community_feedback_network
         
 volumes:
   community-feedback-postgres:

@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^20.1.5",
+    "dotenv": "^10.0.0",
     "eslint-config-airbnb": "^18.2.1",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
     "knex": "^0.95.7",
     "nodemon": "^2.0.12",
-    "pg": "^8.6.0"
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "eslint": "^7.31.0",
